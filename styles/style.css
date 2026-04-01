@@ -25,7 +25,7 @@
 }
 .header {
   gap: 20px;
-  block-size: clamp(20.438rem, calc(19.535rem + 3.85vw), 23rem);
+  block-size: clamp(327px, calc(312.56338px + 3.849765vw), 368px);
   background-color: #fff;
   outline: 2px solid black;
   font-family: var(--accent-font-family);
@@ -37,7 +37,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  inline-size: clamp(23.438rem, calc(16.285rem + 30.516vw), 43.75rem);
+  inline-size:clamp(375px, calc(260.56338px + 30.516432vw), 700px);
 }
 .header-title {
 font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
@@ -46,17 +46,44 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-size:  clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 .main{
+  display: flex;
+  flex-direction: column;
+  gap:50px;
   margin-block-start: 98px;
+  padding-block-end: 100px;
 }
 .card__list{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   list-style: none;
+  inline-size: clamp(375px, calc(260.56338px + 30.516432vw), 700px);
+
 }
-.card__list-item{
+.card__img-wrapper{
+  position: relative;
+}
+.card{
   background-color: #fff;
   border: 2px solid black;
   font-size: 18px;
-
 }
+.card__wrapper-text{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px var(--label-outline-color);
+  opacity: 50%;
+}
+@supports (text-stroke: 1px var(--label-outline-color)) {
+  .card__wrapper-text {
+    text-stroke: 1px var(--label-outline-color);
+  }
+} 
 .card__title{
   padding: 4px 10px;
   font-size: inherit;
@@ -64,6 +91,31 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 .card__img{
   display: block;
+  inline-size: 100%;
+}
+.filter-invert{
+  filter: invert(.9);
+}
+.filter-sepia{
+  filter: sepia(.8);
+}
+.filter-mono{
+  filter: grayscale(100%);
+}
+.filter-blur {
+  filter: blur(5px);
+}
+.filter-cold {
+  filter: hue-rotate(270deg);
+}
+.filter-pop {
+  filter: contrast(150%) saturate(20%);
+}
+.filter-bright {
+  filter: brightness(1.5);
+}
+.filter-faded {
+  filter: saturate(400%);
 }
 .card__desription{
   display: flex;
@@ -71,4 +123,179 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   gap: 25px;
   padding: 25px;
   line-height: 21px;
+}
+.card__buttons{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 4px;
+  padding: 0 25px 25px 25px;
+}
+.button{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+}
+.button:focus{
+  outline: none;
+}
+.button:not(.card__icon-button){
+  position: relative;
+  color:#fff;
+  transition: box-shadow 0.3s ease;
+}
+.button .like-icon{
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease ; 
+  width: 39px;
+  height: 36px;
+}
+.button:focus-visible .like-icon{
+  border-color: black;
+}
+.button:not(.card__icon-button):focus-visible{
+  box-shadow: 2px 2px 0  black;
+}
+.button:not(.card__icon-button)::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform-origin:left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+.button:not(.card__icon-button):hover::before{
+  transform: scaleX(1);
+}
+.button__text{
+  mix-blend-mode: difference;
+  position: relative;
+}
+.sparks{
+  fill: var(--animation-fill-color);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.contour{
+  transition: fill .1s linear;
+}
+.core{
+  fill: transparent;
+  transition: fill .3s .03s linear;
+}
+.main-body{
+    fill: transparent;
+    transition: fill .3s linear;
+}
+.like-icon:hover .core{
+  fill: var(--accent-color);
+  transition: fill .3s  linear;
+}
+.like-icon:hover .main-body{
+  fill: var(--accent-color);
+  transition: fill .3s 0.05s  linear;
+}
+.like-icon:active .core{
+  fill: var(--animation-fill-color);
+  transition: fill .3s  linear;
+}
+.like-icon:active .main-body{
+  fill: var(--animation-fill-color);
+  transition: fill .3s 0.05s  linear;
+}
+.like-icon.is-liked .core{
+  fill: var(--animation-fill-color);
+  transition: fill .3s   linear;
+}
+.like-icon.is-liked .main-body{
+  fill: var(--animation-fill-color);
+  transition: fill .3s 0.05s  linear;
+}
+.like-icon.is-liked .contour{
+  fill: var(--animation-fill-color);
+  transition: fill .3s 0.06s  linear;
+}
+.like-icon.is-liked .heart{
+  transform-origin: center;
+  animation: heart-scale .3s ease-in .15s;
+}
+.like-icon.is-liked .sparks{
+  transform-origin: center;
+  animation: sparks .3s ease-in .3s;
+}
+.card__icon-button{
+  border: none;
+}
+.card__like-button{
+  inline-size:130px;
+  block-size: 38px;
+  border: 2px solid var(--accent-color);
+}
+.save-button{
+  gap: 8px;
+  inline-size: 335px;;
+  block-size: 55px;
+  background-color: #fff;
+  padding: 0;
+}
+.save__modal{
+  inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
+  block-size: 193px;
+  border: 2px solid var(--accent-color);
+  padding: 30px clamp(30px, calc(43.521px - 0.939vw), 40px);
+  font-family: var(--accent-font-family);
+  overflow: hidden;
+}
+.save__modal-description{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.save__modal-title{
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  inline-size: 234px;
+  line-height: 150%;
+}
+.floppy-icon{
+  fill:#fff;
+  position: relative;
+  mix-blend-mode: difference;
+  width: 21px;
+  height: 21px;
+}
+.save__modal-description .floppy-icon{
+  width: 39px;
+  height: 39px;
+  mix-blend-mode: initial;
+}
+.save__madal-button{
+  inline-size: clamp(261px, calc(249.732px + 3.005vw), 293px);
+  block-size: 38px;
+  margin-block-start: 30px;
+  text-transform: uppercase;
+}
+.save__modal::backdrop{
+  background-color: rgba(0, 0, 0, .75);
+}
+@media (width <= 375px){
+.save-button{
+  flex-direction: column;
+  inline-size: 306px;
+  block-size: 84px;
+}
+.floppy-icon{
+  width: 29px;
+  height: 29px;
+}
 }
