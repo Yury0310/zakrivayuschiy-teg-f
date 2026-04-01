@@ -117,7 +117,7 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 .filter-faded {
   filter: saturate(400%);
 }
-.card__desription{
+.card__desription {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -151,7 +151,7 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 .button .like-icon {
   border: 2px solid transparent;
-  transition: border-color 0.3s ease; 
+  transition: border-color 0.3s ease;
   width: 39px;
   height: 36px;
 }
