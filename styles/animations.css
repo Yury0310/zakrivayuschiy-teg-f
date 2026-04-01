@@ -10,18 +10,18 @@
 
 */
 @keyframes heart-scale {
-    from{
+    from {
         scale: 1;
     }
-    to{
+    to {
         scale: 1.25;
     }
 }
-@keyframes sparks{
-     from{
+@keyframes sparks {
+     from {
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }

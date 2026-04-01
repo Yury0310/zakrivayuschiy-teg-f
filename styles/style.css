@@ -45,14 +45,14 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 .header-description {
   font-size:  clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
-.main{
+.main {
   display: flex;
   flex-direction: column;
   gap:50px;
   margin-block-start: 98px;
   padding-block-end: 100px;
 }
-.card__list{
+.card__list {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -60,15 +60,15 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   inline-size: clamp(375px, calc(260.56338px + 30.516432vw), 700px);
 
 }
-.card__img-wrapper{
+.card__img-wrapper {
   position: relative;
 }
-.card{
+.card {
   background-color: #fff;
   border: 2px solid black;
   font-size: 18px;
 }
-.card__wrapper-text{
+.card__wrapper-text {
   position: absolute;
   right: 25px;
   top: 25px;
@@ -84,22 +84,22 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     text-stroke: 1px var(--label-outline-color);
   }
 } 
-.card__title{
+.card__title {
   padding: 4px 10px;
   font-size: inherit;
   font-variation-settings: "wght" var( --card-title-weight, 715);
 }
-.card__img{
+.card__img {
   display: block;
   inline-size: 100%;
 }
-.filter-invert{
+.filter-invert {
   filter: invert(.9);
 }
-.filter-sepia{
+.filter-sepia {
   filter: sepia(.8);
 }
-.filter-mono{
+.filter-mono {
   filter: grayscale(100%);
 }
 .filter-blur {
@@ -124,14 +124,14 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   padding: 25px;
   line-height: 21px;
 }
-.card__buttons{
+.card__buttons {
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 4px;
   padding: 0 25px 25px 25px;
 }
-.button{
+.button {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -141,27 +141,27 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-family: var(--accent-font-family);
   font-size: 14px;
 }
-.button:focus{
+.button:focus {
   outline: none;
 }
-.button:not(.card__icon-button){
+.button:not(.card__icon-button) {
   position: relative;
   color:#fff;
   transition: box-shadow 0.3s ease;
 }
-.button .like-icon{
+.button .like-icon {
   border: 2px solid transparent;
-  transition: border-color 0.3s ease ; 
+  transition: border-color 0.3s ease; 
   width: 39px;
   height: 36px;
 }
-.button:focus-visible .like-icon{
+.button:focus-visible .like-icon {
   border-color: black;
 }
-.button:not(.card__icon-button):focus-visible{
+.button:not(.card__icon-button):focus-visible {
   box-shadow: 2px 2px 0  black;
 }
-.button:not(.card__icon-button)::before{
+.button:not(.card__icon-button)::before {
   content: "";
   position: absolute;
   top: 0;
@@ -173,81 +173,81 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
 }
-.button:not(.card__icon-button):hover::before{
+.button:not(.card__icon-button):hover::before {
   transform: scaleX(1);
 }
-.button__text{
+.button__text {
   mix-blend-mode: difference;
   position: relative;
 }
-.sparks{
+.sparks {
   fill: var(--animation-fill-color);
   opacity: 0;
   transition: opacity .3s ease;
 }
-.contour{
+.contour {
   transition: fill .1s linear;
 }
-.core{
+.core {
   fill: transparent;
   transition: fill .3s .03s linear;
 }
-.main-body{
+.main-body {
     fill: transparent;
     transition: fill .3s linear;
 }
-.like-icon:hover .core{
+.like-icon:hover .core {
   fill: var(--accent-color);
   transition: fill .3s  linear;
 }
-.like-icon:hover .main-body{
+.like-icon:hover .main-body {
   fill: var(--accent-color);
   transition: fill .3s 0.05s  linear;
 }
-.like-icon:active .core{
+.like-icon:active .core {
   fill: var(--animation-fill-color);
   transition: fill .3s  linear;
 }
-.like-icon:active .main-body{
+.like-icon:active .main-body {
   fill: var(--animation-fill-color);
   transition: fill .3s 0.05s  linear;
 }
-.like-icon.is-liked .core{
+.like-icon.is-liked .core {
   fill: var(--animation-fill-color);
   transition: fill .3s   linear;
 }
-.like-icon.is-liked .main-body{
+.like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
   transition: fill .3s 0.05s  linear;
 }
-.like-icon.is-liked .contour{
+.like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
   transition: fill .3s 0.06s  linear;
 }
-.like-icon.is-liked .heart{
+.like-icon.is-liked .heart {
   transform-origin: center;
   animation: heart-scale .3s ease-in .15s;
 }
-.like-icon.is-liked .sparks{
+.like-icon.is-liked .sparks {
   transform-origin: center;
   animation: sparks .3s ease-in .3s;
 }
-.card__icon-button{
+.card__icon-button {
   border: none;
 }
-.card__like-button{
+.card__like-button {
   inline-size:130px;
   block-size: 38px;
   border: 2px solid var(--accent-color);
 }
-.save-button{
+.save-button {
   gap: 8px;
-  inline-size: 335px;;
+  inline-size: 335px;
   block-size: 55px;
   background-color: #fff;
   padding: 0;
 }
-.save__modal{
+.save__modal {
   inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
   block-size: 193px;
   border: 2px solid var(--accent-color);
@@ -255,46 +255,46 @@ font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-family: var(--accent-font-family);
   overflow: hidden;
 }
-.save__modal-description{
+.save__modal-description {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.save__modal-title{
+.save__modal-title {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 14px;
   inline-size: 234px;
   line-height: 150%;
 }
-.floppy-icon{
+.floppy-icon {
   fill:#fff;
   position: relative;
   mix-blend-mode: difference;
   width: 21px;
   height: 21px;
 }
-.save__modal-description .floppy-icon{
+.save__modal-description .floppy-icon {
   width: 39px;
   height: 39px;
   mix-blend-mode: initial;
 }
-.save__madal-button{
+.save__madal-button {
   inline-size: clamp(261px, calc(249.732px + 3.005vw), 293px);
   block-size: 38px;
   margin-block-start: 30px;
   text-transform: uppercase;
 }
-.save__modal::backdrop{
+.save__modal::backdrop {
   background-color: rgba(0, 0, 0, .75);
 }
-@media (width <= 375px){
-.save-button{
+@media (width <= 375px) {
+.save-button {
   flex-direction: column;
   inline-size: 306px;
   block-size: 84px;
 }
-.floppy-icon{
+.floppy-icon {
   width: 29px;
   height: 29px;
 }
